@@ -1,30 +1,3 @@
-@font-face {
-    font-family: "cardo";
-    src: url("Cardo-Bold.ttf");
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "cardo";
-    src: url("Cardo-Italic.ttf");
-    font-style: italic, oblique;
-}
-
-@font-face {
-    font-family: "cardo";
-    src: url("Cardo-Regular.ttf");
-}
-
-  @font-face {
-      font-family: 'Gla';
-      src: url('fsgla.eot');
-      src: url('fsgla.eot?#iefix') format('embedded-opentype'), url('fsgla.woff') format('woff'), url('fsgla.TTF') format('truetype');
-  }
-
-  @font-face {
-      font-family: 'Gla';
-      src: url('fsgla.TTF');
-  }
 
 /* brandico */
 
@@ -43,34 +16,55 @@ body {
     overflow-y: hidden;
 }
 
-body {
-    margin: 0;
-    font-family: "cardo";
-    background: url(../pozadina.jpg) no-repeat center center fixed;
-    background-size: auto auto;
-    background-size: auto auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100%;
-}
+
+.crvenko::before{ width: 100%;
+    height: 100%;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: -moz-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(221, 66, 36, 0.55));
+    background-image: -ms-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(221, 66, 36, 0.55));
+    background-image: -webkit-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(221, 66, 36, 0.55));
+    background-image: -o-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(221, 66, 36, 0.55));
+    background-image: linear-gradient(to bottom right, rgba(173, 164, 164, 0.8), rgba(221, 66, 36, 0.55));
+    background-size: auto;}
+
+.plavko::before{  width: 100%;
+    height: 100%;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: -moz-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(76, 117, 204, 0.55));
+    background-image: -ms-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(76, 117, 204, 0.55));
+    background-image: -webkit-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(76, 117, 204, 0.55));
+    background-image: -o-linear-gradient(top left, rgba(173, 164, 164, 0.8), rgba(76, 117, 204, 0.55));
+    background-image: linear-gradient(to bottom right, rgba(173, 164, 164, 0.8), rgba(76, 117, 204, 0.55));
+    background-size: auto;}
 
 a {
-    color: rgb(104, 0, 2);
+    color: aliceblue;
 }
 
 .front span {
     position: absolute;
-    font-size: 45px;
+    top: 50%;
+    font-size: 30px;
     text-align: center;
     right: 0;
     left: 0;
-    color: rgb(149, 0, 4)
-
+    color: black;
+    transform: translate(0, -50%);
+    
 }
 
-.brojevi, .slova {
+.front{  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  hyphens: manual;}
+.brojevi {
     font-size: 10vmin;
     font-size: 10vm;
     text-align: center;
@@ -80,8 +74,10 @@ a {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     text-shadow: 0px 0px 5px #553585;
-    color: #FFEC8F;
 }
+
+.plavi_broj{color: #87a5e4;}
+.crveni_broj{color: #e4444a;}
 
 .matched .front {
     opacity: 0.5;
@@ -90,12 +86,15 @@ a {
 .ikone {
     max-width: 100%;
     margin-bottom: 10px;
-    max-height: 450px;
+    height: 450px;
 }
 
 body {
+    background-image: url("../wordcloud.png");
+    background-position: center center;
+    background-size: cover;
     min-height: 100%;
-    font-family: 'cardo';
+    font-family: sans-serif;
 }
 
 .time {
@@ -118,13 +117,13 @@ body {
     perspective: 500px;
     min-height: 100%;
     height: 100%;
+    display: none
 }
 
 @-webkit-keyframes matchAnim {
     0% {
         background: #bcffcc;
     }
-
     100% {
         background: white;
     }
@@ -134,7 +133,6 @@ body {
     0% {
         background: #bcffcc;
     }
-
     100% {
         background: white;
     }
@@ -175,7 +173,8 @@ body {
     transform-style: preserve-3d;
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
-    background: #f4eade;}
+    background: white;
+}
 
 .card .inside.picked,
 .card .inside.matched {
@@ -206,7 +205,7 @@ body {
 
 .back {}
 
-.pozadina-zivotinje {
+.pozadina-biti {
     background: url("pozadina.png") no-repeat center center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
@@ -214,7 +213,7 @@ body {
     background-size: contain;
 }
 
-.pozadina-zanimaje {
+.pozadina-htjeti {
     background: url("pozadina2.png") no-repeat center center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
@@ -222,13 +221,7 @@ body {
     background-size: contain;
 }
 
-.pozadina-ljudi {
-    background: url("pozadina3.png") no-repeat center center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-}
+
 
 .card .front img,
 .card .back img {
@@ -247,11 +240,10 @@ body {
 .card .front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
-    background: #D9C8B4;
 }
 
 .modal-overlay {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(173, 164, 164, 0.8);
     position: fixed;
     top: 0;
     left: 0;
@@ -274,50 +266,48 @@ body {
 }
 
 .modal .winner {
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
     color: #4d4d4d;
+    text-transform: uppercase
 }
 
-table{width:100%}
 
-.modal .zivotinje,
-.modal .ljudi,
-.modal .zanimanja,
-#prva,
+
+.modal .gumb,
+#prva,.swal2-styled,
 #druga,
-#treca {
+#treca,#form-submit {
     margin: 30px auto;
     padding: 10px 10px;
     display: block;
-    font-size: 30px;
+    font-size: 20px;
     border: none;
-    background: -webkit-linear-gradient(rgb(149, 0, 4), rgb(104, 0, 2));
-    background: linear-gradient(rgb(149, 0, 4), rgb(104, 0, 2));
+    background: -webkit-linear-gradient(#ED1C24, #c81616);
+    background: linear-gradient(#ED1C24, #c81616);
     border: 1px solid #222;
     border-radius: 5px;
     color: white;
     text-shadow: 0px 1px 0 black;
     cursor: pointer;
-    font-family: 'cardo';
-    width: 65px;
+    font-family: sans-serif;
+    width: 95%;
+    
 }
-.zivotinje{width:initial!important;}
-.modal .zivotinje:hover,
-.modal .ljudi:hover,
+
+.modal .biti:hover,
+.modal .htjeti:hover,
 .modal .zanimanja:hover,
 #prva:hover,
 #druga:hover,
-#treca:hover {
-    background: -webkit-linear-gradient(rgb(104, 0, 2), rgb(149, 0, 4));
-    background: linear-gradient(rgb(104, 0, 2), rgb(149, 0, 4));
-
-
+#treca:hover,.swal2-styled:hover {
+    background: -webkit-linear-gradient(#ED1C24, #ED1C24);
+    background: linear-gradient(#ED1C24, #ED1C24);
 }
 
 .modal .restart:hover {
-    background: -webkit-linear-gradient(rgb(104, 0, 2), rgb(149, 0, 4));
-    background: linear-gradient(rgb(104, 0, 2), rgb(149, 0, 4))
+    background: -webkit-linear-gradient(#ED1C24, #ED1C24);
+    background: linear-gradient(#ED1C24, #ED1C24);
 }
 
 .modal .message {
@@ -405,24 +395,41 @@ footer .disclaimer {
     font-size: 20px;
 }
 
-@media (max-width: 1200px) {
-    .front span {
-        font-size: 32px;
-    }
+ .front {
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
 }
 
+@media (max-width: 1600px) {
+    .front span {
+        font-size: 22px;
+    }
+    
+    
+}
+
+@media (max-width: 1400px) {
+    .front span {
+        font-size: 20px;
+    }
+      .front {
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
+}
 @media (max-width: 900px) {
     .card .front {
         padding: 30px;
     }
-
     .card span {
         font-size: "20px"
     }
-
     .card .back {
         padding: 10px;
     }
+  
 }
 
 @media (max-width: 800px) {
@@ -430,55 +437,47 @@ footer .disclaimer {
         width: 25%;
         height: 20%;
     }
-
+    
     .front span {
-        font-size: 20px
+        font-size: 14px
+    }
+    .card {
+        font-size: 20px;
     }
 
-    .card {
-        font-size: 18px;
-    }
+    #food{font-size:12px!important}
 }
 
 @media (max-width: 767px) {
     footer .disclaimer {
         font-size: 12px;
     }
-
+    
 }
 
 @media (max-width: 480px) {
     .modal .winner {
         font-size: 40px;
     }
-
     .card {
         font-size: 15px;
     }
-
     .front span {
         font-size: 10px
     }
-
     .card .front {
         padding: 5px;
     }
+    
+    .modal .zivotinje, .modal .ljudi, .modal .zanimanja, #prva, #druga, #treca {padding: 10px 10px;}
+    #food{font-size:9px!important}
 
-    .modal .zivotinje,
-    .modal .ljudi,
-    .modal .zanimanja,
-    #prva,
-    #druga,
-    #treca {
-        padding: 10px 10px;
-    }
 }
 
 @media (max-width: 300px) {
     .modal .winner {
         font-size: 30px;
     }
-
     .modal .restart {
         margin: 15px auto;
         padding: 10px 15px;
@@ -486,8 +485,8 @@ footer .disclaimer {
         font-size: 15px;
         border: none;
         background: #4d4d4d;
-        background: -webkit-linear-gradient(rgb(104, 0, 2), rgb(149, 0, 4));
-        background: linear-gradient(rgb(104, 0, 2), rgb(149, 0, 4));
+        background: -webkit-linear-gradient(#4d4d4d, #222);
+        background: linear-gradient(#4d4d4d, #222);
         border: 1px solid #222;
         border-radius: 5px;
         color: white;
