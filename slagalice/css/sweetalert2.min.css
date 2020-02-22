@@ -44,7 +44,7 @@ body.swal2-in {
 
 .swal2-modal {
     background-color: #fff;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Open Sans, sans-serif;
     border-radius: 5px;
     box-sizing: border-box;
     margin: auto;
@@ -70,7 +70,7 @@ body.swal2-in {
     padding: 0;
     line-height: 60px;
     display: block;
-    font-family: "Georgia", serif;
+    font-family: Open Sans, sans-serif;
 }
 
 .swal2-modal .swal2-spacer {
@@ -169,16 +169,16 @@ body.swal2-in {
 }
 
 .swal2-modal .swal2-content {
-    font-size: 12px;
+    font-size: 18px;
     text-align: center;
+    font-weight: 300;
     position: relative;
     float: none;
     margin: 0;
     padding: 0;
     line-height: normal;
     color: #545454;
-    font-family:  "Georgia", serif;
-    text-align: justify;
+    font-family: Open Sans, sans-serif;
 }
 
 .swal2-modal .swal2-checkbox,
@@ -436,7 +436,7 @@ body.swal2-in {
 }
 
 .swal2-icon.swal2-warning {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Open Sans, sans-serif;
     color: #f8bb86;
     border-color: #facea8
 }
@@ -448,7 +448,7 @@ body.swal2-in {
 }
 
 .swal2-icon.swal2-question {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Open Sans, sans-serif;
     color: #87adbd;
     border-color: #c9dae1
 }

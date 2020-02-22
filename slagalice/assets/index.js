@@ -54,6 +54,7 @@ function promijeni_jezik() {
 
 function stvori() {
     if (naslov=="Smiljan"){
+        alert("sda")
         opis="Smiljan, Hrvatska, rodno mjesto Nikole Tesle. Snimka Memorijalnog centra &#39;Nikola Tesla&#39; u Smiljanu. Ustupljeno iz zbirke Muzeja Like."
     }
     /*if (slika == '326.jpg') {
@@ -126,8 +127,8 @@ else{
             text: "CLICK",
             size: 60,
             font: "sans-serif",
-            color: "#680002",
-            rollColor: "#990003",
+            color: "#3228B0",
+            rollColor: "#2c1c9a",
             fontOptions: "italic bold"
         });
 
@@ -135,8 +136,8 @@ else{
             text: "CLICK",
             size: 40,
             font: "sans-serif",
-            color: "#680002",
-            rollColor: "#990003",
+            color: "#3228B0",
+            rollColor: "#2c1c9a",
             fontOptions: "italic bold"
         });
 
