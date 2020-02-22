@@ -1,21 +1,7 @@
-      @font-face {
-          font-family: cardo;
-          src: url(../Cardo-Regular.ttf);
-      }
-      
-      @font-face {
-          font-family: cardo-strong;
-          src: url(../Cardo-Bold.ttf);
-      }
-      
-      @font-face {
-          font-family: cardo-italic;
-          src: url(../Cardo-Italic.ttf);
-      }
-      
+
       body {
           margin: 0;
-          font-family: "cardo";
+          font-family: sans-serif;
           background: url(../../podloga2.jpg) no-repeat center center fixed;
           background-size: auto auto;
           background-size: auto auto;
@@ -70,11 +56,18 @@
           padding: 0;
       }
       
-      #naslov {
+      .naslov {
           text-align: center;
           font-size: 2.5rem;
       }
-      
+      .kartice{
+        display: inline-block;
+        padding: 4px;
+        margin: 0 0.5rem 1rem 0.5rem;
+        background-color: var(--bg-color);
+        line-height: 0;
+        border-radius: var(--border-radius-large);
+      }
       .opis {
           font-size: 1.5rem;
           margin-bottom: 30px;
@@ -88,16 +81,11 @@
       /* The Close Button */
       
       .grid {
-          display: grid;
-          grid-gap: 10px;
-          grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
-          text-align: center;
-          font-size: 20px;
+         text-align: center;
       }
       
       .ikone {
-          max-height: 350px;
-          max-width: 100%;
+        width: 7rem;
           transition: opacity .25s ease-in-out;
           -moz-transition: opacity .25s ease-in-out;
           -webkit-transition: opacity .25s ease-in-out;

@@ -1,11 +1,8 @@
 var slika, naslov, retci, stupci, opis;
 
-
 function broj() {
     $("#broj-puzzla").html($("#retci").val() * $("#stupci").val())
 }
-
-
 
 $(document).ready(function() {
     $(".modal").fadeIn("slow");
@@ -14,11 +11,9 @@ $(document).ready(function() {
     broj();
     $('select').css({
         'font-size': '18px',
-        'font-family': "Georgia"
+        'font-family': "sans-serif"
     });
-    // promijeni_jezik()
-
-
+    promijeni_jezik()
 });
 
 
@@ -27,48 +22,40 @@ $(document).ready(function() {
 
 // When the user clicks anywhere outside of the modal, close it
 
-
-/*
 function promijeni_jezik() {
     if (localStorage.getItem("jezik") == null) {
         localStorage.setItem('jezik', 'hr')
     }
     if (localStorage.getItem("jezik") == "hr") {
         
-        $(".hr").css({
+        $(".hrvatski").css({
             "opacity": "1"
         })
-        $(".eng").css({
+        $(".engleski").css({
             "opacity": "0.5"
         })
-        $("#naslov").text("Slagalice")
-        $(".opis").text("odaberite broj komadića i pritisnite jednu od slika za slaganje")
-        $("#retci-oznaka").text("broj komadića po retcima: ")
-        $("#stupci-oznaka").text("broj komadića po stupcima: ")
-        $("#ukupan").text("ukupan broj komadića za slaganje: ")
-        $("#nazad").text("ODABERI DRUGU IGRU")
+
+        $(".hr").show()
+        $(".eng").hide()
+       
     } else {
         localStorage.setItem('jezik', 'eng')
-        $(".eng").css({
+        $(".engleski").css({
             "opacity": "1"
         })
-        $(".hr").css({
+        $(".hrvatski").css({
             "opacity": "0.5"
         })
-        $("#naslov").text("Puzzles")
-        $(".opis").text("choose number of pieces and click on one of the images to start the puzzle")
-        $("#retci-oznaka").text("number of pieces per row: ")
-        $("#stupci-oznaka").text("number of pieces per column: ")
-        $("#ukupan").text("number of pieces: ")
-        $("#nazad").text("CHOOSE ANOTHER GAME")
+      $(".eng").show()
+      $(".hr").hide()
     }
 }
 
-*/
-
-
 
 function stvori() {
+    if (naslov=="Smiljan"){
+        opis="Smiljan, Hrvatska, rodno mjesto Nikole Tesle. Snimka Memorijalnog centra &#39;Nikola Tesla&#39; u Smiljanu. Ustupljeno iz zbirke Muzeja Like."
+    }
     /*if (slika == '326.jpg') {
             opishr = "<strong><em>Gajde</em></strong> su aerofono glazbalo koje se sastoji od nekoliko dijelova: <em>mješine</em> (dio koji služi kao spremište zraka), <em>puhalice</em> (dio u koji se upuhuje zrak i prolazi do mješine), <em>prebiralice</em> (koja se još naziva i <em>gajdunica</em>). Tipične slavonske gajde imaju dvocijevnu <em>prebiralicu</em> pa se taj dio još naziva i <em>dvojnice</em> ili <em>trubnja</em> (još se naziva i <em>berda</em> ili <em>burdon</em>, a proizvode jednoličan, osnovni, &quot;ležeći&quot; ton)."
             opiseng = "<strong><em>The gajde (bagpipe)</em></strong> is an aerophone musical instrument which consists of several parts: a <em>bag</em> (air reservoir), a <em>blowpipe</em> (into which air going to the bag is blown), a <em>chanter</em> (also called <em>gajdunica</em>. Typical Slavonian bagpipe has a two- piped chanter so it is also called <em>dvojnice</em> or a <em>drone</em> (<em>trubanj</em>, <em>berda</em> or <em>burdon</em> –producing a single constant monotonous tone)."
@@ -92,20 +79,22 @@ function stvori() {
             naziv = naziveng;
             confirm_button = "new game"
         }*/
-    confirm_button = "nova igra"
+if (localStorage.getItem("jezik") == "hr") {
+    confirm_button = "nova igra"}
+else{
+    confirm_button = "new game"
+}
     $("#replay").fadeIn("slow")
     retci = $("#retci").val();
     stupci = $("#stupci").val();
     $(".modal").fadeOut("slow");
     $(".footer").fadeOut("slow");
-
     // SCALING OPTIONS
     // scaling can have values as follows with full being the default
     // "fit"	sets canvas and stage to dimensions and scales to fit inside window size
     // "outside"	sets canvas and stage to dimensions and scales to fit outside window size
     // "full"	sets stage to window size with no scaling
     // "tagID"	add canvas to HTML tag of ID - set to dimensions if provided - no scaling
-
     var scaling = "fit"; // this will resize to fit inside the screen dimensions
     if (window.innerWidth >= 1040) {
         var width = 1920;
@@ -120,18 +109,14 @@ function stvori() {
     var frame = new Frame(scaling, width, height);
     frame.on("ready", function() {
         zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
-
         var stage = frame.stage;
         var stageW = frame.width;
         var stageH = frame.height;
-
         var puzzleX;
         var puzzleY;
         frame.outerColor = "#707070";
         frame.color = "#E9DDCF";
-
         var con = new Container
-
         // with chaining - can also assign to a variable for later access
         var imageObj = [];
         var piecesArrayObj = [];
@@ -140,7 +125,7 @@ function stvori() {
         var label = new Label({
             text: "CLICK",
             size: 60,
-            font: "Helvetica Neue",
+            font: "sans-serif",
             color: "#680002",
             rollColor: "#990003",
             fontOptions: "italic bold"
@@ -149,7 +134,7 @@ function stvori() {
         var label2 = new Label({
             text: "CLICK",
             size: 40,
-            font: "Helvetica Neue",
+            font: "sans-serif",
             color: "#680002",
             rollColor: "#990003",
             fontOptions: "italic bold"
@@ -160,7 +145,7 @@ function stvori() {
         stage.addChild(label2);
         label.x = label.y = 20;
          label2.y = 20;
-        label2.x = stageW - 180;
+        label2.x = stageW - 210;
         label.on("click", function() {
             zog("clicking");
         });
@@ -256,9 +241,8 @@ function stvori() {
                             label.text = countPieces + "/" + totalPieces;
                             zog("countPieces", countPieces);
                             if (countPieces == totalPieces) {
-
                                 swal({
-                                    html: '<h1 style="text-align:center">'+naslov+'</h1><img src="assets/' + slika + '" class="ikone2"/><br><br>',
+                                    html: '<h1 style="text-align:center">'+naslov+'</h1><img src="assets/' + slika + '" class="ikone2"/><br><br><p>'+opis+'</p>',
                                     confirmButtonText: confirm_button,
                                     allowOutsideClick: false
                                 });
