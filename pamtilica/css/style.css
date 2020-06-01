@@ -285,7 +285,7 @@ body {
     font-size: 16px;
     border: none;
     background: -webkit-linear-gradient(#3228B0, #2c1c9a);
-    background: linear-gradient(#3228B0, #2c1c9a)
+    background: linear-gradient(#3228B0, #2c1c9a);
     border: 1px solid #222;
     border-radius: 5px;
     color: white;
@@ -476,6 +476,10 @@ footer .disclaimer {
 
 }
 
+
+.swal2-modal h2{line-height: 50px!important;}
+em{font-style: italic;}
+
 @media (max-width: 300px) {
     .modal .winner {
         font-size: 30px;
@@ -498,4 +502,3 @@ footer .disclaimer {
 }
 
 
-}
