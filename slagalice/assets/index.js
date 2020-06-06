@@ -53,8 +53,7 @@ function promijeni_jezik() {
 
 
 function stvori() {
-
-
+    swal("<p><strong>Slapovi Niagare</strong> na kojima je Tesla projektirao prvu veliku komercijalnu hidroelektranu izmjenične struje za masovnu proizvodnju, predstavljaju niz masivnih&nbsp;vodopadakoji se nalaze na rijeci&nbsp;Niagari&nbsp;u istočnom dijelu&nbsp;Sjeverne Amerike, na granici&nbsp;Sjedinjenih Američkih Država&nbsp;i&nbsp;Kanade. Sastoje se od tri odvojena vodopada, vrlo &scaron;irokog slapa. S protokom vode od 168 000 kubnih metara&nbsp;u minuti jedni su od najpoznatijih slapova svijeta. Premda po visini ne spadaju u osobito visoke, slapovi Niagare predstavljaju jedne od naj&scaron;irih i najmoćnijih vodopada na svijetu. Znameniti su po svojoj ljepoti te služe kao popularna turistička destinacija i izvor hidroelektrične energije. Na suprotnim obalama su smje&scaron;teni gradovi-blizanci&nbsp;Niagara Falls, New York&nbsp;i&nbsp;Niagara Falls, Ontario. Niagara, &scaron;to znači “voda &scaron;to grmi”,naziv je koji su ovom moćnom slapu, koji dana tvori spektakularnu granicu između SAD-a i Kanade, nadjenuli američki Indijanci. Od jezera Erie rijeka Niagara mirno teče gotovo 56 km, no u blizini jezera Ontario pretvara se u brzace koji užurbano jure prema kataraktu u magli vodene pra&scaron;ine i duga. Potom slijedi dramatičan pad od otprilike 50 metara u kojem se bujica uz grmljavinu strmoglavljuje u podivljahu pjenu kao da pada u ponor bez dna. Otok Goat, na rubu kaskade, rijeku dijeli na dva Američki slapovi na istočnoj stranai tvore ravnu crtu dugu oko 300 metara, a kanadski slapovi Horseshoe, (Slapovi potkove) dvostruko su duži i, kako im i ime govori, imaju oblik potkove.</p>")
     if (naslov == "Nikola Tesla – Pop Art portret") {
         opis = ""
     } else if (naslov == "Nikola Tesla – portret snimljen u dobi od oko 40 godina") {
@@ -107,8 +106,16 @@ function stvori() {
     }
     var countPieces = 0;
     var totalPieces = 0;
+   var allowDefault=false;
     // as of ZIM 5.5.0 you do not need to put zim before ZIM functions and classes
-    var frame = new Frame(scaling, width, height);
+    
+var frame = new Frame({
+    scaling:scaling, // or other scaling options
+    width:width,
+    height:height,
+    allowDefault:true // let HTML scroll, page up, wheel, etc.
+});
+    
     frame.on("ready", function() {
         zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
         var stage = frame.stage;
@@ -243,7 +250,6 @@ function stvori() {
                             label.text = countPieces + "/" + totalPieces;
                             zog("countPieces", countPieces);
                             if (countPieces == totalPieces) {
-                                $("#myCanvas").remove();
                                 swal({
                                     html: '<h1 style="text-align:center">' + naslov + '</h1><img src="assets/' + slika + '" class="ikone2"/><br><br><p>' + opis + '</p>',
                                     confirmButtonText: confirm_button,
@@ -345,6 +351,8 @@ function stvori() {
             /*con.x -= imageWidth/2;
             con.y -= imageHeight/2;*/
             stage.update();
+
+
 
         }); // end asset complete
 
