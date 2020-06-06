@@ -53,7 +53,8 @@ function promijeni_jezik() {
 
 
 function stvori() {
-    $(window).disablescroll("undo");
+
+
     if (naslov == "Nikola Tesla – Pop Art portret") {
         opis = ""
     } else if (naslov == "Nikola Tesla – portret snimljen u dobi od oko 40 godina") {
@@ -242,6 +243,7 @@ function stvori() {
                             label.text = countPieces + "/" + totalPieces;
                             zog("countPieces", countPieces);
                             if (countPieces == totalPieces) {
+                                $("#myCanvas").remove();
                                 swal({
                                     html: '<h1 style="text-align:center">' + naslov + '</h1><img src="assets/' + slika + '" class="ikone2"/><br><br><p>' + opis + '</p>',
                                     confirmButtonText: confirm_button,
@@ -343,8 +345,6 @@ function stvori() {
             /*con.x -= imageWidth/2;
             con.y -= imageHeight/2;*/
             stage.update();
-
-
 
         }); // end asset complete
 
