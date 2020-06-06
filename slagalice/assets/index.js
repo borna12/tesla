@@ -250,10 +250,7 @@ function stvori() {
                                     location.reload();
                                 });
                             };
-                            $('.ikone2').lightzoom({
-                                glassSize: 175,
-                                zoomPower: 3
-                            });
+                           
                             stage.update();
 
                         }
