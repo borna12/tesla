@@ -53,6 +53,7 @@ function promijeni_jezik() {
 
 
 function stvori() {
+    $(window).disablescroll("undo");
     if (naslov == "Nikola Tesla – Pop Art portret") {
         opis = ""
     } else if (naslov == "Nikola Tesla – portret snimljen u dobi od oko 40 godina") {
