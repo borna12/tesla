@@ -477,7 +477,7 @@ footer .disclaimer {
 }
 
 
-.swal2-modal h2{line-height: 50px!important;}
+.swal2-modal h2{line-height: 30px!important;font-size: 20px!important;padding-bottom: 10px!important}
 em{font-style: italic;}
 
 @media (max-width: 300px) {
