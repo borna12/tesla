@@ -53,9 +53,8 @@ function promijeni_jezik() {
 
 
 function stvori() {
-    if (naslov=="Smiljan"){
-        alert("sda")
-        opis="Smiljan, Hrvatska, rodno mjesto Nikole Tesle. Snimka Memorijalnog centra &#39;Nikola Tesla&#39; u Smiljanu. Ustupljeno iz zbirke Muzeja Like."
+    if (naslov=="Nikola Tesla – Pop Art portret"){
+        opis=""
     }
     /*if (slika == '326.jpg') {
             opishr = "<strong><em>Gajde</em></strong> su aerofono glazbalo koje se sastoji od nekoliko dijelova: <em>mješine</em> (dio koji služi kao spremište zraka), <em>puhalice</em> (dio u koji se upuhuje zrak i prolazi do mješine), <em>prebiralice</em> (koja se još naziva i <em>gajdunica</em>). Tipične slavonske gajde imaju dvocijevnu <em>prebiralicu</em> pa se taj dio još naziva i <em>dvojnice</em> ili <em>trubnja</em> (još se naziva i <em>berda</em> ili <em>burdon</em>, a proizvode jednoličan, osnovni, &quot;ležeći&quot; ton)."
