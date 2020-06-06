@@ -138,6 +138,7 @@
           padding-left: 2%;
           display: inline;
       }
+.swal2-modal h2{display: none!important}
 .swal2-in{overflow-y: auto!important}
 .swal2-modal h1{font-size: 20px!important;}
 .swal2-modal .swal2-content{text-align: justify!important}
