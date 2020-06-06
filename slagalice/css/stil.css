@@ -140,6 +140,7 @@
       }
 
 .swal2-modal h1{font-size: 20px!important;}
+.swal2-modal .swal2-content{text-align: justify!important}
       
       @media only screen and (max-width: 1780px) {
           .kom_izbornik {
